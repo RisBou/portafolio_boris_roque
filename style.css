@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*selector de TIPO (etiqueta): afectar a todo el cuerpo de la pagina*/
+body{
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #f5f5f5;
+}
+/*selector de TIPO aplicar estilo al encabezado*/
+header{
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+ 
+/*selector descendiente*/
+nav ul{
+    list-style: none;
+}
+/*selector de tipo para los elementos li dentro del nav ul*/
+nav ul li{
+    display: inline-block;
+    margin: 0 20px;
+}
+/*selector de los enlaces (a) dentro del nav */
+ 
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+ 
+/*selector de CLASE selecciona cualquier elemento que tenga class="proyecto-card"*/
+.proyecto-card{
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
