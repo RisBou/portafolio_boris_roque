@@ -1,43 +1,275 @@
-*{
+:root {
+    /* Paleta de colores principal */
+    --primary-indigo: #6366f1;   
+    --accent-cyan: #22d3ee;      
+    --dark-slate: #0f172a;
+    --text-main: #334155;        
+    --text-light: #94a3b8;
+    --bg-soft: #f8fafc;
+    --white: #ffffff;
+    
+    /* Fuentes principales y transiciones para la fotito */
+    --font-main: 'Inter', -apple-system, sans-serif;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --radius-lg: 24px;
+    --radius-md: 12px;
+    --shadow-premium: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/*selector de TIPO (etiqueta): afectar a todo el cuerpo de la pagina*/
-body{
-    font-family: 'Poppins', sans-serif;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-main);
     line-height: 1.6;
-    background: #f5f5f5;
+    color: var(--text-main);
+    background-color: var(--white);
+    overflow-x: hidden;
 }
-/*selector de TIPO aplicar estilo al encabezado*/
-header{
-    background: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
- 
-/*selector descendiente*/
-nav ul{
-    list-style: none;
+
+/*Hero, la sección principal donde va mi nombre en la página*/
+.hero {
+    background-color: var(--dark-slate);
+    color: var(--white);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+    background-image: radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
 }
-/*selector de tipo para los elementos li dentro del nav ul*/
-nav ul li{
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1.2;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem); /*Tamaño variable para hacerlo responsive*/
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -1.5px;
+    background: linear-gradient(to right, #ffffff, #cbd5e1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
     display: inline-block;
-    margin: 0 20px;
+    color: var(--accent-cyan);
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 1rem;
 }
-/*selector de los enlaces (a) dentro del nav */
- 
-nav ul li a{
-    color: #fff;
-    text-decoration: none;
+
+.description {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    max-width: 580px;
+}
+
+
+/*Estilos y efectos para la imagen principal*/
+.profile-img .img-placeholder {
+    width: 280px;
+    height: 280px;
+    background: linear-gradient(135deg, var(--primary-indigo), var(--accent-cyan));
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 800;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: rotate(3deg);
+    transition: var(--transition);
+}
+
+.profile-img .img-placeholder:hover {
+    transform: rotate(0deg) scale(1.05);
+}
+
+/*Para la estructura de la pagina que ya esta establecida en el html*/
+.section {
+    padding: 100px 0;
+}
+
+h2 {
+    font-size: 2.2rem;
+    color: var(--dark-slate);
+    margin-bottom: 3.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+h2::before {
+    content: '';
+    width: 45px;
+    height: 6px;
+    background: var(--primary-indigo);
+    border-radius: 10px;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+}
+
+.project-card {
+    background: var(--white);
+    border-radius: var(--radius-md);
+    border: 1px solid #f1f5f9;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    box-shadow: var(--shadow-premium);
+    border-color: var(--primary-indigo);
+}
+
+.project-img {
+    height: 220px;
+    background-color: var(--bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-indigo);
+    font-weight: 600;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.project-info {
+    padding: 2.5rem;
+}
+
+.project-info h3 {
+    font-size: 1.5rem;
+    color: var(--dark-slate);
+    margin-bottom: 0.8rem;
+}
+
+.project-info p {
+    color: var(--text-main);
+}
+
+.details-container {
+    background-color: var(--bg-soft);
+    padding: 80px 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.detail-col h3 {
+    color: var(--primary-indigo);
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+}
+
+.detail-col p, .detail-col li {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 0.8rem;
+    list-style: none;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+/*Para las listas de habilidades*/
+.detail-col li::before {
+    content: '*';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
     font-weight: bold;
+    font-family: monospace;
 }
- 
-/*selector de CLASE selecciona cualquier elemento que tenga class="proyecto-card"*/
-.proyecto-card{
-    border: 1px solid #ddd;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 8px;
+
+.footer-simple {
+    padding: 3rem 0;
+    text-align: center;
+    background: var(--dark-slate);
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Responsivo para tablets */
+@media (max-width: 992px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .description {
+        margin: 0 auto;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding-left: 1rem;
+    }
+
+    .detail-col {
+        border-bottom: 1px solid #e2e8f0;
+        padding-bottom: 2rem;
+    }
+}
+
+/* Resposnsivo para celulares */
+@media (max-width: 600px) {
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+
+    .profile-img .img-placeholder {
+        width: 200px;
+        height: 200px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
 }
