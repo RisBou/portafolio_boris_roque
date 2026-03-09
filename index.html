@@ -1,88 +1,102 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="es" data-tema="claro">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Boris Orlando Roque Huanca | Fullstack Developer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
- 
-
 <body>
+    <div class="formas-fondo">
+        <div class="forma forma-uno"></div>
+        <div class="forma forma-dos"></div>
+    </div>
 
-    <header class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <h1>Boris Orlando Roque Huanca</h1>
-                <p class="subtitle">Desarrollador Fullstack y Database Designer</p>
-                <p class="description">Desarrollo Web Fullstack para optimizar los procesos más complejos.</p>
+    <button id="boton-tema" class="boton-flotante">🌓</button>
+
+    <header class="inicio-hero">
+        <div class="contenedor contenido-hero">
+            <div class="texto-hero">
+                <h1>Boris Orlando <br> <span class="texto-degradado">Roque Huanca</span></h1>
+                <p class="subtitulo-profesional">Desarrollador Fullstack & Database Designer</p>
+                <p class="descripcion">Ingeniería de software con especialidad en <strong>Bases de Datos</strong> y soluciones Fullstack eficientes para optimizar los procesos más complejos.</p>
             </div>
-            <div class="profile-img">
-                <div class="img-placeholder">FOTO</div>
+            <div class="contenedor-foto">
+                <div class="foto-perfil" id="foto-interactiva">BR</div>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <section id="sobre-mi" class="section">
+    <main class="contenedor">
+        <section id="sobre-mi" class="seccion-ajustada">
             <h2>Sobre Mí</h2>
-            <p>Como Licenciado en Informática y actual estudiante de postgrado en Desarrollo Fullstack,
-                entiendo que la tecnología debe ser el motor de la eficiencia empresarial o institucional. Me
-                especializo en backend y administración de datos, con gran habilidad para resolver acertijos lógicos y
-                optimizar sistemas existentes. Es mi meta reducir la carga operativa mediante la automatización
-                inteligente. Creo en el código que simplifica la vida del usuario y potencia los resultados posibles.
-                Fuera del entorno de desarrollo, me verás explorando nuevos rincones de mi país, siempre acompañado de
-                un buen café y una gran playlist.</p>
+            <div class="tarjeta-cristal">
+                <p>Licenciado en Informática y estudiante de postgrado. Me dedico a transformar procesos manuales en sistemas automatizados de alto rendimiento, uniendo la seguridad de las bases de datos con interfaces modernas y fluidas.</p>
+            </div>
         </section>
 
-        <section id="proyectos" class="section">
-            <h2>Proyectos</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <div class="project-img">Imagen del Proyecto</div>
-                    <div class="project-info">
-                        <h3>Sistema de Gestión de Eventos</h3>
-                        <p>Plataforma integral para la organización y control de eventos masivos.</p>
+        <section id="proyectos" class="seccion-ajustada">
+            <div class="encabezado-proyectos">
+                <h2>Proyectos Destacados</h2>
+                <div class="botones-filtro">
+                    <button class="btn-filtro activo" data-categoria="todos">Todos</button>
+                    <button class="btn-filtro" data-categoria="web">Web</button>
+                    <button class="btn-filtro" data-categoria="diseno">Diseño</button>
+                </div>
+            </div>
+
+            <div class="cuadricula-proyectos">
+                <article class="tarjeta-proyecto" data-tipo="web">
+                    <div class="imagen-proyecto">SGEVENTOS</div>
+                    <div class="info-proyecto">
+                        <h3>Gestión de Eventos</h3>
+                        <p>Laravel + PostgreSQL</p>
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <div class="project-img">Imagen del Proyecto</div>
-                    <div class="project-info">
-                        <h3>Sistema de Gestión Hospitalaria</h3>
-                        <p>Optimización de registros médicos y administración de recursos de salud.</p>
+                <article class="tarjeta-proyecto" data-tipo="diseno">
+                    <div class="imagen-proyecto">SIGHOV2</div>
+                    <div class="info-proyecto">
+                        <h3>Gestión Hospitalaria</h3>
+                        <p>Seguridad y Auditoría</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="detalles" class="details-grid">
-            <div class="detail-col">
+        <section class="cuadricula-info-final">
+            <div class="tarjeta-cristal">
                 <h3>FORMACIÓN</h3>
-                <p>Diplomado en Desarrollo Fullstack - Actualmente</p>
+                <p><strong>Diplomado en Fullstack</strong><br>En curso - 2026</p>
+                <p><strong>Lic. en Informática</strong><br>UMSA - Bolivia</p>
             </div>
-            <div class="detail-col">
+
+            <div class="tarjeta-cristal">
                 <h3>HABILIDADES</h3>
-                <ul>
-                    <li>Diseño y Administración de Bases de Datos SQL</li>
-                    <li>Desarrollo Frontend (HTML, CSS, JS)</li>
-                    <li>Desarrollo Backend (PHP, Python)</li>
-                </ul>
+                <div class="habilidad-item">
+                    <div class="texto-habilidad"><span>SQL & DB</span> <span>90%</span></div>
+                    <div class="barra-fondo"><div class="progreso" data-nivel="90%"></div></div>
+                </div>
+                <div class="habilidad-item">
+                    <div class="texto-habilidad"><span>Fullstack JS</span> <span>80%</span></div>
+                    <div class="barra-fondo"><div class="progreso" data-nivel="80%"></div></div>
+                </div>
             </div>
-            <div class="detail-col">
+
+            <div class="tarjeta-cristal">
                 <h3>CONTACTO</h3>
-                <p>Email: roqueboris86@gmail.com</p>
-                <p>Teléfono: +591 73260450</p>
+                <p>roqueboris86@gmail.com</p>
+                <button id="btn-contacto" class="boton-estilo">Enviar Mensaje</button>
+                <p id="mensaje-agradecimiento" class="oculto">¡Gracias! Te responderé pronto.</p>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; 2026 Boris Orlando Roque Huanca</p>
+    <footer class="pie-pagina">
+        <p>Boris Orlando Roque Huanca &copy; 2026</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-
 </html>
