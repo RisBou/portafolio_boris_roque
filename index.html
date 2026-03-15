@@ -1,102 +1,166 @@
 <!DOCTYPE html>
 <html lang="es" data-tema="claro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boris Orlando Roque Huanca | Fullstack Developer</title>
+    <title>Boris Roque | Fullstack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="formas-fondo">
         <div class="forma forma-uno"></div>
         <div class="forma forma-dos"></div>
     </div>
 
-    <button id="boton-tema" class="boton-flotante">🌓</button>
+    <nav class="barra-nav">
+        <div class="contenedor nav-flex">
+            <span class="logo">BR<span class="punto">.</span>dev</span>
+            <div id="widget-clima" class="clima">Cargando clima...</div>
+            <button id="boton-tema" class="btn-tema-toggle">🌓</button>
+        </div>
+    </nav>
 
-    <header class="inicio-hero">
-        <div class="contenedor contenido-hero">
-            <div class="texto-hero">
-                <h1>Boris Orlando <br> <span class="texto-degradado">Roque Huanca</span></h1>
-                <p class="subtitulo-profesional">Desarrollador Fullstack & Database Designer</p>
-                <p class="descripcion">Ingeniería de software con especialidad en <strong>Bases de Datos</strong> y soluciones Fullstack eficientes para optimizar los procesos más complejos.</p>
+    <header class="hero">
+        <div class="contenedor hero-grid">
+            <div class="hero-texto">
+                <h1 id="escritura-titulo">Boris Orlando Roque Huanca</h1>
+                <p class="profesion">Licenciado en Informática / Desarrollador Web Fullstack</p>
+                <p class="eslogan">"Desarrollo Web Fullstack para optimizar los procesos más complejos"</p>
+                <div class="botones-hero">
+                    <a href="#contacto" class="btn-estilo btn-principal">Contactar</a>
+                    <a href="#proyectos" class="btn-estilo btn-secundario">Ver Proyectos</a>
+                </div>
             </div>
-            <div class="contenedor-foto">
-                <div class="foto-perfil" id="foto-interactiva">BR</div>
+            <div class="hero-img">
+                <div class="contenedor-avatar">
+                    <img src="img/borisperfil.jpeg" alt="Boris Orlando Roque" class="avatar-interactivo">
+                </div>
             </div>
         </div>
     </header>
 
     <main class="contenedor">
-        <section id="sobre-mi" class="seccion-ajustada">
-            <h2>Sobre Mí</h2>
-            <div class="tarjeta-cristal">
-                <p>Licenciado en Informática y estudiante de postgrado. Me dedico a transformar procesos manuales en sistemas automatizados de alto rendimiento, uniendo la seguridad de las bases de datos con interfaces modernas y fluidas.</p>
+        <section class="seccion">
+            <h2>Biografía</h2>
+            <div class="tarjeta-interactiva bio-box">
+                <p>Como Licenciado en Informática y actual estudiante de postgrado en Desarrollo Fullstack, entiendo que
+                    la tecnología debe ser el motor de la eficiencia empresarial. Me especializo en <strong>backend y
+                        administración de datos</strong>, con gran habilidad para resolver acertijos lógicos y optimizar
+                    sistemas existentes.</p>
+                <p>Fuera del entorno de desarrollo, me verás explorando nuevos rincones de mi país, siempre acompañado
+                    de un buen café y una gran playlist.</p>
             </div>
         </section>
 
-        <section id="proyectos" class="seccion-ajustada">
-            <div class="encabezado-proyectos">
+        <section id="proyectos" class="seccion">
+            <div class="header-proyectos">
                 <h2>Proyectos Destacados</h2>
-                <div class="botones-filtro">
-                    <button class="btn-filtro activo" data-categoria="todos">Todos</button>
-                    <button class="btn-filtro" data-categoria="web">Web</button>
-                    <button class="btn-filtro" data-categoria="diseno">Diseño</button>
+                <div class="filtros-container">
+                    <div class="buscador-wrapper">
+                        <input type="text" id="buscador" placeholder="Buscar proyecto..." class="input-busqueda">
+                    </div>
+                    <div class="tags-busqueda">
+                        <button class="btn-tag" data-filter="">Todos</button>
+                        <button class="btn-tag" data-filter="laravel">Laravel</button>
+                        <button class="btn-tag" data-filter="postgresql">PostgreSQL</button>
+                        <button class="btn-tag" data-filter="livewire">Livewire</button>
+                    </div>
                 </div>
             </div>
 
-            <div class="cuadricula-proyectos">
-                <article class="tarjeta-proyecto" data-tipo="web">
-                    <div class="imagen-proyecto">SGEVENTOS</div>
-                    <div class="info-proyecto">
-                        <h3>Gestión de Eventos</h3>
-                        <p>Laravel + PostgreSQL</p>
+            <div class="grid-proyectos">
+                <article class="card-proyecto tarjeta-interactiva" data-keywords="laravel php postgresql bootstrap">
+                    <div class="card-imagen">
+                        <img src="img/sgeeventos.png" alt="SGEVENTOS">
+                    </div>
+                    <div class="proyecto-contenido">
+                        <div class="card-tag">Proyecto 1</div>
+                        <h3>SGEVENTOS</h3>
+                        <p>Gestión de eventos masivos con motor de validación para evitar colisiones de agenda.</p>
+                        <div class="stack"><span>Laravel</span><span>PostgreSQL</span></div>
                     </div>
                 </article>
 
-                <article class="tarjeta-proyecto" data-tipo="diseno">
-                    <div class="imagen-proyecto">SIGHOV2</div>
-                    <div class="info-proyecto">
-                        <h3>Gestión Hospitalaria</h3>
-                        <p>Seguridad y Auditoría</p>
+                <article class="card-proyecto tarjeta-interactiva" data-keywords="livewire php powergrid hospitalario">
+                    <div class="card-imagen">
+                        <img src="img/sigho.jpeg" alt="Sistema Hospitalario">
+                    </div>
+                    <div class="proyecto-contenido">
+                        <div class="card-tag">Proyecto 2</div>
+                        <h3>Sistema Hospitalario</h3>
+                        <p>Optimización de procesos médicos y auditoría en tiempo real para el sector salud.</p>
+                        <div class="stack"><span>Livewire</span><span>PHP</span></div>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="cuadricula-info-final">
-            <div class="tarjeta-cristal">
-                <h3>FORMACIÓN</h3>
-                <p><strong>Diplomado en Fullstack</strong><br>En curso - 2026</p>
-                <p><strong>Lic. en Informática</strong><br>UMSA - Bolivia</p>
+        <section class="seccion-split">
+            <div class="col">
+                <h2 class="subtitulo-premium">Experiencia Laboral</h2>
+                <div class="timeline-container">
+                    <div class="tarjeta-interactiva item-timeline">
+                        <div class="timeline-dot"></div>
+                        <span class="fecha-pill">Ene 2025 - Dic 2025</span>
+                        <h4>Desarrollador Fullstack</h4>
+                        <p class="institucion">Seguro Social Universitario La Paz</p>
+                        <ul class="funciones-lista">
+                            <li>Desarrollador Backend principal.</li>
+                            <li>Diseño y administración de Bases de Datos.</li>
+                        </ul>
+                    </div>
+                    <div class="tarjeta-interactiva item-timeline">
+                        <div class="timeline-dot"></div>
+                        <span class="fecha-pill">Ene 2024 - Dic 2024</span>
+                        <h4>Pasante</h4>
+                        <p class="institucion">Seguro Social Universitario La Paz</p>
+                        <ul class="funciones-lista">
+                            <li>Auxiliar en administración de datos.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
 
-            <div class="tarjeta-cristal">
-                <h3>HABILIDADES</h3>
-                <div class="habilidad-item">
-                    <div class="texto-habilidad"><span>SQL & DB</span> <span>90%</span></div>
-                    <div class="barra-fondo"><div class="progreso" data-nivel="90%"></div></div>
+            <div class="col">
+                <h2 class="subtitulo-premium">Formación Académica</h2>
+                <div class="formacion-grid">
+                    <div class="tarjeta-interactiva card-academica border-top-acento">
+                        <span class="status-badge">En curso</span>
+                        <h4>Diplomado Fullstack</h4>
+                        <p>Universidad Privada del Valle</p>
+                    </div>
+                    <div class="tarjeta-interactiva card-academica border-top-primario">
+                        <span class="status-badge">2025</span>
+                        <h4>Licenciatura en Informática</h4>
+                        <p>Universidad Mayor de San Andrés</p>
+                    </div>
+                    <div class="tarjeta-interactiva card-academica border-top-light">
+                        <span class="status-badge">2017</span>
+                        <h4>Bachiller en Humanidades</h4>
+                        <p>Colegio Gregorio Reynolds</p>
+                    </div>
                 </div>
-                <div class="habilidad-item">
-                    <div class="texto-habilidad"><span>Fullstack JS</span> <span>80%</span></div>
-                    <div class="barra-fondo"><div class="progreso" data-nivel="80%"></div></div>
-                </div>
-            </div>
-
-            <div class="tarjeta-cristal">
-                <h3>CONTACTO</h3>
-                <p>roqueboris86@gmail.com</p>
-                <button id="btn-contacto" class="boton-estilo">Enviar Mensaje</button>
-                <p id="mensaje-agradecimiento" class="oculto">¡Gracias! Te responderé pronto.</p>
             </div>
         </section>
     </main>
 
-    <footer class="pie-pagina">
-        <p>Boris Orlando Roque Huanca &copy; 2026</p>
+    <footer id="contacto" class="footer">
+        <div class="contenedor footer-content">
+            <div class="contacto-info">
+                <h3>Contacto</h3>
+                <p>📧 roqueboris86@gmail.com | 📞 73260450</p>
+                <p>📍 La Paz - Bolivia</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Boris Orlando Roque Huanca</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
